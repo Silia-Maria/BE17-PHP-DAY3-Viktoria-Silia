@@ -17,9 +17,7 @@ do {
     
     echo "Print my name for $y times with the do while loop <br>";
     $y++;
-} while ($y <= 10);
-
-
+} while ($y <= 10)
 
 
 ?>
