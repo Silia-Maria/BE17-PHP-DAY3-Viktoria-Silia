@@ -10,7 +10,7 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $cardbody .= "
         <div class='d-flex mt-4'>
-            <img src='$row[image]' alt='...' class='dishImage me-5'>
+            <img src='./pictures/$row[image]' alt='...' class='dishImage me-5'>
             <div class='align-self-center ms-5 dishText'>
                     <h3>$row[name]</h3> 
                     <a class='small text-secondary text-uppercase'>More info</a>
@@ -21,8 +21,8 @@ if (mysqli_num_rows($result) > 0) {
         </div>
         <div class='text-end mb-3'>
 
-        <button class='actionBtn me-2'>Update Dish</button>
-        <button class='actionBtn'>Delete Dish</button>
+        <a href='update.php?id=$row[dishId]'><button class='actionBtn me-2'>Update Dish</button></a>
+       <a href='delete.php?id=$row[dishId]'> <button class='actionBtn'>Delete Dish</button></a>
         </div>
     <hr>    
 
