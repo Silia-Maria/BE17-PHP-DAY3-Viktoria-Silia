@@ -16,10 +16,15 @@ if (mysqli_num_rows($result)>0) {
         <td><img class='img-thumbnail' src='pictures/" . $row['image'] . "'></td>
        <td>" . $row['name'] . "</td>
        <td>" . $row['price'] . "</td>
+       <td><a href='update.php?id=" . $row['dish_id'] . "'><button class='btn btn-primary btn-sm' type='button'>Edit</button></a>
+           <a href='delete.php?id=" . $row['dish_id'] . "'><button class='btn btn-danger btn-sm' type='button'>Delete</button></a></td>
         </tr>
 ";
+    } 
+} else {
+        $tbody = "<tr><td colspan='4' class='text-center'>No data available</td></tr>";
     }
-}
+
 ?>
 
 
@@ -73,12 +78,16 @@ if (mysqli_num_rows($result)>0) {
                 </tr>
             </thead>
 
-            <!--shows the info fron the database  -->
+            <!--shows the info from the database  -->
             <tbody>
                <?php echo $tbody;?>
             </tbody>
 
         </table>
+
+         <div class='mb-3'>
+            <a href="create.php"><button class='btn btn-primary' type="button">Add product</button></a>
+        </div>
     </div>
     
 </body>
