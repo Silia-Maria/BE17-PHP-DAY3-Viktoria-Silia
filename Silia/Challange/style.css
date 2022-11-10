@@ -1,3 +1,5 @@
+/* Index */
+
 .hero {
     width: 100%;
     height: 80vh;
@@ -16,4 +18,34 @@
     height: 50vh;
     border-radius: 50%;
     object-fit: cover;
+}
+
+.dishText {
+    width: 40%;
+}
+
+.actionBtn,
+a .actionBtn {
+    text-transform: uppercase;
+    height: 8%;
+    width: 15%;
+    background-color: white;
+    border: none;
+    border: 0.2px solid black;
+    border-radius: 5px;
+}
+
+.heading .actionBtn {
+    height: 200%;
+}
+
+
+/* Create Page */
+
+fieldset {
+    width: 70%;
+    margin: auto;
+    padding: 2em;
+    border: 0.5px solid black;
+    border-radius: 10px;
 }

@@ -9,15 +9,20 @@ $cardbody = "";
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $cardbody .= "
-        <div class='d-flex my-5'>
+        <div class='d-flex mt-4'>
             <img src='$row[image]' alt='...' class='dishImage me-5'>
-            <div class='align-self-center ms-5'>
+            <div class='align-self-center ms-5 dishText'>
                     <h3>$row[name]</h3> 
-                    <a class='small text-secondary text-uppercase more'>More info</a>
-                    <p class='hide'>$row[description]</p>
+                    <a class='small text-secondary text-uppercase'>More info</a>
+                    <p>$row[description]</p>
             </div>
                     <h4 class='align-self-center ms-auto me-2 '>$row[price] €</h4>    
             
+        </div>
+        <div class='text-end mb-3'>
+
+        <button class='actionBtn me-2'>Update Dish</button>
+        <button class='actionBtn'>Delete Dish</button>
         </div>
     <hr>    
 
@@ -38,7 +43,7 @@ if (mysqli_num_rows($result) > 0) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php require_once "./components/boot.php";
-    require_once  "./components/font-awesome.php"
+    require_once  "./components/font-awesome.php";
     ?>
     <title>Restaurant</title>
 </head>
@@ -89,24 +94,13 @@ if (mysqli_num_rows($result) > 0) {
       Dishes Content
     ------------------------->
     <div class="container mt-5">
+        <div class="d-flex justify-content-between">
+            <h3>Specialties</h3>
+            <a href="create.php"><button type="button" class="btn btn-outline-dark">Add new Dish</button></a>
+
+        </div>
 
         <?php echo $cardbody ?>
-        <!-- <div class="col-12 col-md-6 col-lg-4 mt-5">
-                <div class="d-flex">
-                    <img src="https://images.unsplash.com/photo-1498811008858-d95a730b2ffc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="..." class="dishImage">
-                    <div class="ms-5 align-self-center">
-                        <div class="d-flex justify-content-between border border-success cardheading">
-                            <h3>Dish Name </h3>
-                            <h4 class="ms-2">price</h4>
-                        </div>
-                        <p class="small text-secondary">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, id! Non, ad maxime</p>
-                    </div>
-
-                </div>
-                <hr>
-
-            </div> -->
-
 
 
     </div>
